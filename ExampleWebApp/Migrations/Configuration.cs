@@ -14,10 +14,21 @@ namespace ExampleWebApp.Migrations
 
         protected override void Seed(ExampleWebApp.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            context.Categories.AddOrUpdate(c => c.Id,
+                new Entities.Category
+                {
+                    Id = 1, 
+                    Name = "Ноутбуки",
+                    Photo = "defoult.jpg"
+                });
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+            context.Categories.AddOrUpdate(c => c.Id,
+               new Entities.Category
+               {
+                   Id = 2,
+                   Name = "Планшети",
+                   Photo = "defoult1.jpg"
+               });
         }
     }
 }
