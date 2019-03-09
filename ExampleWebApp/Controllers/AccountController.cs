@@ -461,7 +461,7 @@ namespace ExampleWebApp.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "UserProfile");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
