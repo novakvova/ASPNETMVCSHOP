@@ -177,12 +177,18 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Entities\Category.cs" />
+
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201903091254327_Begin database.cs" />
     <Compile Include="Migrations\201903091254327_Begin database.Designer.cs">
       <DependentUpon>201903091254327_Begin database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903091459419_Add tblCategories.cs" />
+    <Compile Include="Migrations\201903091459419_Add tblCategories.Designer.cs">
+      <DependentUpon>201903091459419_Add tblCategories.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -269,6 +275,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903091254327_Begin database.resx">
       <DependentUpon>201903091254327_Begin database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903091459419_Add tblCategories.resx">
+      <DependentUpon>201903091459419_Add tblCategories.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
