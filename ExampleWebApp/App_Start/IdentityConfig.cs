@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using ExampleWebApp.Models;
+using System.Net.Mail;
 
 namespace ExampleWebApp
 {
@@ -18,6 +19,16 @@ namespace ExampleWebApp
     {
         public Task SendAsync(IdentityMessage message)
         {
+            MailMessage mailMessage = new MailMessage()
+            {
+                Subject = message.Subject,
+                Body = message.Body,
+                IsBodyHtml = true
+            };
+            mailMessage.To.Add(new MailAddress(message.Destination));
+            SmtpClient smtpClient = new SmtpClient();
+            //smtpClient.SendAsync(mailMessage, null);
+            smtpClient.Send(mailMessage);
             // Plug in your email service here to send an email.
             return Task.FromResult(0);
         }
