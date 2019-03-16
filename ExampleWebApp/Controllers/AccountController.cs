@@ -172,9 +172,9 @@ namespace ExampleWebApp.Controllers
                     // Send an email with this link
                      string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                      var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                     await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                     await UserManager.SendEmailAsync(user.Id, "Підтвердження вашого акаунту", "Для підтвердження вашого акаунту нажміть <a href=\"" + callbackUrl + "\">сюди</a>");
 
-                    return RedirectToAction("Login", "Account");
+                    return View("DisplayEmail");
 
                 }
                 AddErrors(result);

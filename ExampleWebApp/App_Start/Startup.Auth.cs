@@ -54,15 +54,15 @@ namespace ExampleWebApp
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "258705461706003",
+               appSecret: "8352413a1a66791b2655611dfd89c209");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "385896615899-l2o24u5djgnmc6h5d68pt1a5i3gjvc57.apps.googleusercontent.com",
+                ClientSecret = "zOmUxmkEDWwcxTmpxyexGHMq"
+            });
         }
     }
 }
